@@ -1,8 +1,12 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const app = express();
-dotenv.config({path:'./env'});
+const userRouter = require('./routers/userRouter');
+dotenv.config({path:'./.env'});
+app.use(express.json());
 app.get('/',(req,res)=>{
     res.status(200).json('message sent')
 })
-app.listen(process.env.PORT)
+app.use('/api/v1/user',userRouter);
+
+module.exports = app;
