@@ -26,6 +26,16 @@ const AuthSchema = new Schema({
         },
         message:'please enter the correct password confirmation'
     }
+    },
+    location:{
+        type:{
+            type:String,
+            default:'Point',
+            enum:['Point']
+        },
+        coordinates:[Number],
+        address:String,
+        description:String
     }
 })
 AuthSchema.pre('save',async function (next) {
