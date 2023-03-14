@@ -45,13 +45,16 @@ const data = await resp.json();
 setPetrostations(data);
   }
   getPetrostation();
+
   });
   useEffect(() => {
-    if (!map.current) return; // wait for map to initialize
+    if (!map.current)
+      return; // wait for map to initialize
     map.current.on('move', () => {
       setLng(map.current.getCenter().lng.toFixed(4));
       setLat(map.current.getCenter().lat.toFixed(4));
       setZoom(map.current.getZoom().toFixed(2));
+
     });
   });
   console.log(petrostations);
@@ -83,5 +86,7 @@ Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
     </div>
   );
 }
+
+
 
 export default App;

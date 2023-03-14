@@ -16,7 +16,7 @@ try{
 const getPetro = await Petrostation.find();
 resp.status(200).json(getPetro);
 }catch(err){
-resp.statu(404).json(err);
+resp.status(404).json(err);
 }
 }
 
